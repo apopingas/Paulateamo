@@ -3,11 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para ti ❤️</title>
+
+    <title>Para el amor de mi vida ❤️</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f0714;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Fondo */
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 20% 20%, #8b164f 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, #4b155f 0%, transparent 30%),
+                linear-gradient(135deg, #120713, #22091d, #100817);
+        }
+
+        /* Corazones */
+        .hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 20px;
+            opacity: 0.7;
+            animation: float 8s linear infinite;
+        }
+
+        .heart:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart:nth-child(2) {
+            left: 25%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-child(3) {
+            left: 45%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-child(4) {
+            left: 65%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-child(5) {
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Secciones */
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+        }
+
+        .hero {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .small {
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffb5d4;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 12vw, 90px);
+            line-height: 0.95;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #fff, #ff9fc9, #fff);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 0%;
+            }
+
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #e9cdda;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 28px;
+            border-radius: 999px;
+            border: 1px solid #ff72ac;
+            background: rgba(255, 70, 140, 0.15);
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        .button:hover {
+            background: #ff4f9a;
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 79, 154, 0.5);
+        }
+
+        /* Carta */
+        .card {
+            max-width: 700px;
+            width: 100%;
+            padding: 40px 30px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 25px;
+            color: #ff9fc9;
+        }
+
+        .card p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #f2dce8;
+            margin-bottom: 15px;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 30px;
+            color: #ff9fc9;
+            font-style: italic;
+        }
+
+        /* Contador */
+        .counter {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .counter h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .counter p {
+            color: #e3c9d7;
+            margin-bottom: 35px;
+        }
+
+        .time {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            min-width: 90px;
+            padding: 20px 15px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .time-box strong {
+            display: block;
+            font-size: 30px;
+            color: #ff8fbe;
+        }
+
+        .time-box span {
+            color: #dcb9ca;
+            font-size: 13px;
+        }
+
+        /* Sorpresa */
+        .surprise {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .surprise h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        #secret {
+            display: none;
+            max-width: 600px;
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(255, 80, 150, 0.12);
+            border: 1px solid rgba(255, 120, 180, 0.3);
+            animation: appear 0.7s ease;
+        }
+
+        #secret p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #ffe3ef;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #9f8292;
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                padding: 30px 22px;
+            }
+
+            .card h2 {
+                font-size: 29px;
+            }
+
+            .card p {
+                font-size: 16px;
+            }
+
+            .counter h2,
+            .surprise h2 {
+                font-size: 30px;
+            }
+
+            .time-box {
+                min-width: 75px;
+                padding: 15px 10px;
+            }
+
+            .time-box strong {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Te amo ❤️</h1>
-    <p>Esta pequeña página la hice especialmente para ti.</p>
+
+    <div class="background"></div>
+
+    <!-- Corazones flotando -->
+    <div class="hearts">
+        <div class="heart">❤️</div>
+        <div class="heart">💗</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">❤️</div>
+    </div>
+
+    <!-- PORTADA -->
+    <section class="hero">
+
+        <div class="small">Una pequeña página para ti</div>
+
+        <h1>Te amo ❤️</h1>
+
+        <p>
+            Puede que esto sea solamente una página web...
+            pero detrás de cada palabra hay alguien que te quiere
+            muchísimo.
+        </p>
+
+        <a href="#carta" class="button">
+            Hay algo que quiero decirte ↓
+        </a>
+
+    </section>
+
+    <!-- CARTA -->
+    <section id="carta">
+
+        <div class="card">
+
+            <h2>Para ti 💌</h2>
+
+            <p>
+                No sé exactamente en qué momento te convertiste
+                en una persona tan importante para mí.
+                Solo sé que desde que estás en mi vida,
+                hay momentos que se sienten mucho más bonitos.
+            </p>
+
+            <p>
+                Me gusta poder compartir contigo mis días,
+                mis tonterías, mis pensamientos y hasta esas
+                conversaciones que probablemente no tienen ningún sentido.
+            </p>
+
+            <p>
+                Y aunque no siempre encuentre las palabras correctas,
+                quiero que sepas algo muy sencillo:
+                <strong>te quiero muchísimo.</strong>
+            </p>
+
+            <p>
+                Esta página es pequeña, pero representa algo enorme:
+                las ganas que tengo de hacerte sonreír.
+            </p>
+
+            <div class="signature">
+                Con amor,<br>
+                Tu novio ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTADOR -->
+    <section class="counter">
+
+        <h2>Desde que llegaste a mi vida ⏳❤️</h2>
+
+        <p>
+            Cada segundo contigo cuenta.
+        </p>
+
+        <div class="time">
+
+            <div class="time-box">
+                <strong id="days">0</strong>
+                <span>Días</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="hours">0</strong>
+                <span>Horas</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="minutes">0</strong>
+                <span>Minutos</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="seconds">0</strong>
+                <span>Segundos</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SORPRESA -->
+    <section class="surprise">
+
+        <h2>Tengo algo más que decirte...</h2>
+
+        <p>Pero primero tienes que tocar el botón 👀</p>
+
+        <button class="button" onclick="showSecret()">
+            Abrir sorpresa 💗
+        </button>
+
+        <div id="secret">
+
+            <p>
+                Si pudiera elegir una y otra vez,
+                entre todas las personas del mundo,
+                probablemente volvería a elegirte a ti.
+                ❤️
+                <br><br>
+                Te amo muchísimo.
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+        Hecho con ❤️ especialmente para ti.
+    </footer>
+
+
+    <script>
+
+        /*
+         * CAMBIA ESTA FECHA
+         *
+         * Pon aquí la fecha en la que comenzaron su relación.
+         *
+         * Formato:
+         * Año, mes - 1, día, hora, minuto
+         *
+         * Ejemplo:
+         * new Date(2026, 5, 20, 18, 30)
+         *
+         * Junio = 5
+         * Julio = 6
+         * Agosto = 7
+         */
+
+        const startDate = new Date(2026, 7, 1, 0, 0);
+
+        function updateCounter() {
+
+            const now = new Date();
+
+            const difference = now - startDate;
+
+            const secondsTotal = Math.floor(difference / 1000);
+
+            const days = Math.floor(secondsTotal / 86400);
+
+            const hours = Math.floor(
+                (secondsTotal % 86400) / 3600
+            );
+
+            const minutes = Math.floor(
+                (secondsTotal % 3600) / 60
+            );
+
+            const seconds =
+                secondsTotal % 60;
+
+            document.getElementById("days").textContent = days;
+            document.getElementById("hours").textContent = hours;
+            document.getElementById("minutes").textContent = minutes;
+            document.getElementById("seconds").textContent = seconds;
+        }
+
+        setInterval(updateCounter, 1000);
+
+        updateCounter();
+
+
+        function showSecret() {
+
+            const secret =
+                document.getElementById("secret");
+
+            secret.style.display = "block";
+
+        }
+
+    </script>
+
 </body>
 </html>
