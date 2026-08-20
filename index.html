@@ -2,15 +2,21 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Emonuela 🖤</title>
+
 
     <style>
 
         /* ==================================================
-           ESTILOS GENERALES
+           GENERAL
         ================================================== */
 
         * {
@@ -24,9 +30,12 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
 
-            /* FONDO SIMPLE */
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             background: #111111;
 
             color: #eeeeee;
@@ -36,10 +45,11 @@
 
 
         /* ==================================================
-           CORAZONES DISCRETOS
+           CORAZONES
         ================================================== */
 
         .hearts {
+
             position: fixed;
 
             inset: 0;
@@ -52,6 +62,7 @@
         }
 
         .heart {
+
             position: absolute;
 
             bottom: -30px;
@@ -108,7 +119,6 @@
                 transform: translateY(-110vh);
                 opacity: 0;
             }
-
         }
 
 
@@ -126,7 +136,8 @@
 
             align-items: center;
 
-            padding: 70px 20px;
+            padding:
+                90px 20px;
 
             position: relative;
 
@@ -140,9 +151,9 @@
 
         .hero {
 
-            text-align: center;
-
             flex-direction: column;
+
+            text-align: center;
         }
 
         .mini {
@@ -166,8 +177,6 @@
             line-height: 0.95;
 
             margin-bottom: 25px;
-
-            color: #eeeeee;
         }
 
         .hero h1 span {
@@ -188,7 +197,7 @@
 
 
         /* ==================================================
-           BOTÓN
+           BOTONES
         ================================================== */
 
         .button {
@@ -244,8 +253,6 @@
                 clamp(32px, 8vw, 48px);
 
             margin-bottom: 15px;
-
-            color: #eeeeee;
         }
 
         .section-subtitle {
@@ -255,11 +262,13 @@
             color: #888888;
 
             margin-bottom: 40px;
+
+            line-height: 1.6;
         }
 
 
         /* ==================================================
-           DESDE EL 12 DE AGOSTO
+           INICIO
         ================================================== */
 
         .beginning {
@@ -424,6 +433,8 @@
         .gallery-section {
 
             flex-direction: column;
+
+            text-align: center;
         }
 
         .gallery {
@@ -474,33 +485,27 @@
         }
 
         .photo:nth-child(1) {
-            transform:
-                rotate(-5deg);
+            transform: rotate(-5deg);
         }
 
         .photo:nth-child(2) {
-            transform:
-                rotate(4deg);
+            transform: rotate(4deg);
         }
 
         .photo:nth-child(3) {
-            transform:
-                rotate(-3deg);
+            transform: rotate(-3deg);
         }
 
         .photo:nth-child(4) {
-            transform:
-                rotate(5deg);
+            transform: rotate(5deg);
         }
 
         .photo:nth-child(5) {
-            transform:
-                rotate(-4deg);
+            transform: rotate(-4deg);
         }
 
         .photo:nth-child(6) {
-            transform:
-                rotate(3deg);
+            transform: rotate(3deg);
         }
 
         .photo img {
@@ -537,6 +542,15 @@
             flex-direction: column;
 
             text-align: center;
+
+            /*
+               Un poco más de espacio para que
+               no se sienta pegada a la sección anterior.
+            */
+
+            padding-top: 120px;
+
+            padding-bottom: 120px;
         }
 
         .music-card {
@@ -569,11 +583,215 @@
             margin-bottom: 10px;
         }
 
-        .music-card p {
+        .music-card > p {
 
             color: #999999;
 
             line-height: 1.6;
+        }
+
+
+        /* ==================================================
+           LISTA DE CANCIONES
+        ================================================== */
+
+        .song-list {
+
+            width: 100%;
+
+            margin-top: 30px;
+        }
+
+        .song {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            width: 100%;
+
+            padding: 16px;
+
+            margin-bottom: 14px;
+
+            border-radius: 8px;
+
+            background: #111111;
+
+            border:
+                1px solid #292929;
+
+            text-align: left;
+
+            transition:
+                0.25s ease;
+        }
+
+        .song:hover {
+
+            border-color:
+                #444444;
+        }
+
+        .song-info {
+
+            flex: 1;
+        }
+
+        .song-info strong {
+
+            display: block;
+
+            color: #eeeeee;
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+        }
+
+        .song-info span {
+
+            color: #777777;
+
+            font-size: 13px;
+        }
+
+        .play-button {
+
+            flex-shrink: 0;
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid #444444;
+
+            background: #191919;
+
+            color: #eeeeee;
+
+            cursor: pointer;
+
+            font-size: 15px;
+
+            transition:
+                0.25s ease;
+        }
+
+        .play-button:hover {
+
+            background: #222222;
+
+            border-color:
+                #d989aa;
+
+            color: #f0a9c5;
+
+            transform:
+                scale(1.05);
+        }
+
+        .song-playing {
+
+            border-color:
+                #d989aa;
+        }
+
+        .song-playing .play-button {
+
+            border-color:
+                #d989aa;
+
+            color:
+                #d989aa;
+        }
+
+
+        /* ==================================================
+           FORMULARIO DE CANCIONES
+        ================================================== */
+
+        .music-form {
+
+            width: 100%;
+
+            margin-top: 35px;
+
+            padding-top: 25px;
+
+            border-top:
+                1px solid #292929;
+        }
+
+        .music-form p {
+
+            margin-bottom: 15px;
+
+            color: #aaaaaa;
+        }
+
+        .music-form input {
+
+            width: 100%;
+
+            padding: 14px;
+
+            border-radius: 7px;
+
+            border:
+                1px solid #333333;
+
+            background: #111111;
+
+            color: #eeeeee;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        .music-form input:focus {
+
+            border-color:
+                #d989aa;
+        }
+
+        .music-form small {
+
+            display: block;
+
+            margin-top: 10px;
+
+            color: #666666;
+
+            font-size: 12px;
+        }
+
+
+        /* ==================================================
+           YOUTUBE INVISIBLE
+        ================================================== */
+
+        .youtube-player {
+
+            position: fixed;
+
+            width: 200px;
+
+            height: 200px;
+
+            left: -1000px;
+
+            top: -1000px;
+
+            opacity: 0;
+
+            pointer-events: none;
         }
 
 
@@ -684,7 +902,6 @@
                 transform:
                     translateY(0);
             }
-
         }
 
 
@@ -713,7 +930,20 @@
             section {
 
                 padding:
-                    60px 18px;
+                    70px 18px;
+            }
+
+            .music {
+
+                padding-top: 100px;
+
+                padding-bottom: 100px;
+            }
+
+            .music-card {
+
+                padding:
+                    28px 20px;
             }
 
             .time-box {
@@ -740,9 +970,15 @@
                     30px 22px;
             }
 
+            .song {
+
+                padding: 14px;
+            }
+
         }
 
     </style>
+
 </head>
 
 
@@ -764,7 +1000,6 @@
     </div>
 
 
-
     <!-- ==================================================
          1. PORTADA
     ================================================== -->
@@ -772,7 +1007,9 @@
     <section class="hero">
 
         <div class="mini">
+
             TU pagina hecha por tu emo fav
+
         </div>
 
 
@@ -781,24 +1018,25 @@
             hola,<br>
 
             <span>
+
                 Emonuela 🖤
+
             </span>
 
         </h1>
 
 
-        <!-- ✏️ EDITA AQUÍ -->
-
         <p>
 
             No sabía muy bien qué hacerte,
-            y como lo romantico no es lo mio te hice una pagina web.
+            y como lo romantico no es lo mio
+            te hice una pagina web.
+
+            <br><br>
 
             Espero que te guste :3
 
         </p>
-
-        <!-- FIN EDITA AQUÍ -->
 
 
         <a
@@ -812,7 +1050,6 @@
     </section>
 
 
-
     <!-- ==================================================
          2. DESDE EL 12 DE AGOSTO
     ================================================== -->
@@ -820,7 +1057,6 @@
     <section
         class="beginning"
         id="inicio">
-
 
         <h2 class="section-title">
 
@@ -836,14 +1072,14 @@
         </div>
 
 
-        <!-- ✏️ EDITA AQUÍ -->
-
         <p class="beginning-text">
 
             ( si es nuestra fecha verdad? :( )
+
             Apenas estamos empezando lo nuestro,
-            pero quería guardar este día y como no sabiaaa como hacerlo
-            pues lo hice a mi manera ( bien nerd uwu )
+            pero quería guardar este día y como no
+            sabiaaa como hacerlo pues lo hice a mi
+            manera ( bien nerd uwu ).
 
             <br><br>
 
@@ -851,15 +1087,13 @@
             por que no me dejan salir xd,
             pero tenemos este comienzo.
 
+            <br><br>
+
             Y eso a mi me hace feli :D.
 
         </p>
 
-        <!-- FIN EDITA AQUÍ -->
-
-
     </section>
-
 
 
     <!-- ==================================================
@@ -867,7 +1101,6 @@
     ================================================== -->
 
     <section class="counter">
-
 
         <h2 class="section-title">
 
@@ -943,13 +1176,11 @@
     </section>
 
 
-
     <!-- ==================================================
-         4. COSAS QUE ME ENCANTAN DE TI
+         4. COSAS QUE ME ENCANTAN
     ================================================== -->
 
     <section class="things">
-
 
         <h2 class="section-title">
 
@@ -968,16 +1199,13 @@
         <div class="things-grid">
 
 
-            <!-- COSA 1 -->
-
             <div class="thing">
 
                 <h3>
+
                     Tu forma de ser
+
                 </h3>
-
-
-                <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
 
@@ -988,23 +1216,16 @@
 
                 </p>
 
-                <!-- FIN -->
-
-
             </div>
 
-
-
-            <!-- COSA 2 -->
 
             <div class="thing">
 
                 <h3>
+
                     Tus ojos
+
                 </h3>
-
-
-                <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
 
@@ -1015,23 +1236,16 @@
 
                 </p>
 
-                <!-- FIN -->
-
-
             </div>
 
-
-
-            <!-- COSA 3 -->
 
             <div class="thing">
 
                 <h3>
+
                     Tu pelo
+
                 </h3>
-
-
-                <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
 
@@ -1041,49 +1255,36 @@
 
                 </p>
 
-                <!-- FIN -->
-
-
             </div>
 
-
-
-            <!-- COSA 4 -->
 
             <div class="thing">
 
                 <h3>
+
                     Tu autismo 🖤
+
                 </h3>
-
-
-                <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
 
                     No eres autista obviamente JAJAJA,
-                    o bueno capaz si como yo jeje pero 
-                    si eres autista enserio igual me encantas.
+                    o bueno capaz si como yo jeje,
+                    pero si eres autista enserio
+                    igual me encantas.
 
                 </p>
-
-                <!-- FIN -->
-
 
             </div>
 
 
-
-            <!-- COSA 5 -->
-
             <div class="thing">
 
                 <h3>
+
                     Tu gato webudo
+
                 </h3>
-
-
-                <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
 
@@ -1093,9 +1294,6 @@
 
                 </p>
 
-                <!-- FIN -->
-
-
             </div>
 
 
@@ -1104,13 +1302,11 @@
     </section>
 
 
-
     <!-- ==================================================
          5. MI EMONUELA
     ================================================== -->
 
     <section class="gallery-section">
-
 
         <h2 class="section-title">
 
@@ -1121,7 +1317,9 @@
 
         <p class="section-subtitle">
 
-            no se solo fotos tuyas, en lo que podemos salir para tomarnos cientos de fotoos
+            no se solo fotos tuyas,
+            en lo que podemos salir para
+            tomarnos cientos de fotoos
 
         </p>
 
@@ -1129,16 +1327,11 @@
         <div class="gallery">
 
 
-            <!-- 📸 FOTO 1 -->
-
             <div class="photo">
 
                 <img
                     src="fotos/emonuela1.jpg"
-                    alt="Tu">
-
-
-                <!-- ✏️ TEXTO -->
+                    alt="Mi Emonuela">
 
                 <p>
                     mi emonuela 🖤
@@ -1147,17 +1340,11 @@
             </div>
 
 
-
-            <!-- 📸 FOTO 2 -->
-
             <div class="photo">
 
                 <img
                     src="fotos/emonuela2.jpg"
-                    alt="Tu pero mii">
-
-
-                <!-- ✏️ TEXTO -->
+                    alt="Tu pero mia">
 
                 <p>
                     tu mii
@@ -1166,37 +1353,25 @@
             </div>
 
 
-
-            <!-- 📸 FOTO 3 -->
-
             <div class="photo">
 
                 <img
                     src="fotos/emonuela3.jpg"
-                    alt="Besame porfavor">
-
-
-                <!-- ✏️ TEXTO -->
+                    alt="Emonuela">
 
                 <p>
-                    esta foto me encantaaaaaaaaaaaaaaaaa
+                    esta foto me encantaaaaaaaa
                     ( besame )
                 </p>
 
             </div>
 
 
-
-            <!-- 📸 FOTO 4 -->
-
             <div class="photo">
 
                 <img
                     src="fotos/emonuela4.jpg"
-                    alt="AJJAJSAJS">
-
-
-                <!-- ✏️ TEXTO -->
+                    alt="JAJAJA">
 
                 <p>
                     xd
@@ -1205,17 +1380,11 @@
             </div>
 
 
-
-            <!-- 📸 FOTO 5 -->
-
             <div class="photo">
 
                 <img
                     src="fotos/emonuela5.jpg"
-                    alt="no me mates por esta foto">
-
-
-                <!-- ✏️ TEXTO -->
+                    alt="Foto">
 
                 <p>
                     🖤
@@ -1224,17 +1393,11 @@
             </div>
 
 
-
-            <!-- 📸 FOTO 6 -->
-
             <div class="photo">
 
                 <img
                     src="fotos/emonuela-6.jpg"
-                    alt="gato webudo">
-
-
-                <!-- ✏️ TEXTO -->
+                    alt="Gato">
 
                 <p>
                     el webudo
@@ -1248,82 +1411,197 @@
     </section>
 
 
-
     <!-- ==================================================
          6. NUESTRA MÚSICA
     ================================================== -->
 
-<section class="music">
+    <section class="music">
 
-    <h2 class="section-title">
+        <h2 class="section-title">
 
-        Nuestra cancion onichan 🎧
+            Nuestra musica 🎧
 
-    </h2>
-
-
-    <div class="music-card">
-
-        <div class="music-icon">
-            
-        </div>
+        </h2>
 
 
-        <h3>
+        <p class="section-subtitle">
 
-            ¿Qué canción quieres que ponga?
-
-        </h3>
-
-
-        <p>
-
-            Todavía no tenemos nuestra canción,
-            así que elige tú una :3
+            oficialmente elegidas por Emonuela 🖤
 
         </p>
 
 
-        <!-- FORMULARIO -->
-
-        <form
-            action="https://formspree.io/f/meajnkyz"
-            method="POST"
-            style="margin-top: 25px;">
-
-            
-            <input
-                type="text"
-                name="cancion"
-                placeholder="Escribe una canción..."
-                required
-                style="
-                    width: 100%;
-                    padding: 14px;
-                    border-radius: 7px;
-                    border: 1px solid #333333;
-                    background: #111111;
-                    color: #eeeeee;
-                    font-size: 15px;
-                    outline: none;
-                ">
+        <div class="music-card">
 
 
-            <button
-                type="submit"
-                class="button"
-                style="margin-top: 15px;">
+            <div class="music-icon">
 
-                mandalaaaa
+                🎧
 
-            </button>
-
-        </form>
+            </div>
 
 
-    </div>
+            <h3>
 
-</section>
+                nuestro pequeño recopilatorio
+
+            </h3>
+
+
+            <p>
+
+                estas son las canciones que
+                Emonuela ha elegido para nosotros :3
+
+            </p>
+
+
+            <!-- ==================================================
+                 CANCIONES
+            ================================================== -->
+
+            <div class="song-list">
+
+
+                <!-- WONDERWALL -->
+
+                <div
+                    class="song"
+                    id="song-wonderwall">
+
+                    <div class="song-info">
+
+                        <strong>
+
+                            Wonderwall
+
+                        </strong>
+
+                        <span>
+
+                            Oasis
+
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="play-button"
+                        onclick="
+                            playSong(
+                                'bx1Bh8ZvH84',
+                                'song-wonderwall'
+                            )
+                        ">
+
+                        ▶
+
+                    </button>
+
+                </div>
+
+
+                <!-- VALENTINE -->
+
+                <div
+                    class="song"
+                    id="song-valentine">
+
+                    <div class="song-info">
+
+                        <strong>
+
+                            Valentine
+
+                        </strong>
+
+                        <span>
+
+                            Laufey
+
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="play-button"
+                        onclick="
+                            playSong(
+                                'tyKu0uZS86Q',
+                                'song-valentine'
+                            )
+                        ">
+
+                        ▶
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ==================================================
+                 FORMULARIO
+            ================================================== -->
+
+            <div class="music-form">
+
+                <p>
+
+                    ¿quieres agregar otra? uwu
+
+                </p>
+
+
+                <form
+                    action="https://formspree.io/f/meajnkyz"
+                    method="POST">
+
+
+                    <input
+                        type="text"
+                        name="cancion"
+                        placeholder="Escribe una canción..."
+                        required>
+
+
+                    <button
+                        type="submit"
+                        class="button">
+
+                        mandarme canción 🖤
+
+                    </button>
+
+
+                    <small>
+
+                        prometo escucharla :3
+
+                    </small>
+
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- REPRODUCTOR INVISIBLE -->
+
+        <div
+            id="youtube-player"
+            class="youtube-player">
+
+        </div>
+
+    </section>
 
 
     <!-- ==================================================
@@ -1331,7 +1609,6 @@
     ================================================== -->
 
     <section class="letter">
-
 
         <h2 class="section-title">
 
@@ -1343,52 +1620,42 @@
         <div class="letter-card">
 
 
-            <!-- ==================================================
-                 ✏️✏️✏️ TU CARTA EMPIEZA AQUÍ
-            ================================================== -->
-
-
             <p>
 
                 Emonuela :3 🖤
 
                 <br><br>
 
-
-                <!-- ✏️ ESCRIBE AQUÍ -->
-
-                No sé exactamente cómo empezar esto porque nunca había hecho una página para alguien,
-                y realmente es la primera pagina que hago que no la pueda ver yo solo JAJSJAAJ
-
-                <!-- FIN -->
+                No sé exactamente cómo empezar esto
+                porque nunca había hecho una página
+                para alguien, y realmente es la primera
+                pagina que hago que no la pueda ver yo
+                solo JAJSJAAJ
 
             </p>
 
 
             <p>
 
-                <!-- ✏️ SEGUNDO PÁRRAFO -->
-
-                Pero queria que fuera algo de solo nosotros dos,
-                algo que tu puedas ver y apreciar y cuando podamos
-                salir hacerlo un espacio para compartir cositas de los dos.
-
-                <!-- FIN -->
+                Pero queria que fuera algo de solo
+                nosotros dos, algo que tu puedas ver
+                y apreciar y cuando podamos salir
+                hacerlo un espacio para compartir
+                cositas de los dos.
 
             </p>
 
 
             <p>
 
-                <!-- ✏️ TERCER PÁRRAFO -->
-
-                y en fin JAJSJA no se que decir solo digo que
-                te amo muchisimo gracias por estar conmigo y esperarme
-                en especial por el hecho de no poder salir pero te prometo 
-                que voy a mejorar mis notas, pasar el año y poder salir para asi
-                compartir muchsisisisiisimos momentos mas juntitos como pareja
-
-                <!-- FIN -->
+                y en fin JAJSJA no se que decir solo
+                digo que te amo muchisimo gracias por
+                estar conmigo y esperarme en especial
+                por el hecho de no poder salir pero te
+                prometo que voy a mejorar mis notas,
+                pasar el año y poder salir para asi
+                compartir muchsisisisiisimos momentos
+                mas juntitos como pareja
 
             </p>
 
@@ -1399,15 +1666,9 @@
 
             </div>
 
-
-            <!-- ==================================================
-                 FIN DE TU CARTA
-            ================================================== -->
-
         </div>
 
     </section>
-
 
 
     <!-- ==================================================
@@ -1415,7 +1676,6 @@
     ================================================== -->
 
     <section class="surprise">
-
 
         <h2 class="section-title">
 
@@ -1445,9 +1705,6 @@
             class="secret"
             id="secret">
 
-
-            <!-- ✏️ EDITA AQUÍ -->
-
             <p>
 
                 Paulita
@@ -1459,9 +1716,12 @@
                 <br><br>
 
                 Gracias por estar conmigo :3 y
-                espero esto te guste mucho
-                lo voy a estar actualizando cada
-                cierto tiempo con cosas nuevas jeje
+                espero esto te guste mucho.
+                Lo voy a estar actualizando cada
+                cierto tiempo con cosas nuevas jeje.
+
+                <br><br>
+
                 te amo te amo te amo te amo.
 
                 <br><br>
@@ -1474,17 +1734,13 @@
 
             </p>
 
-            <!-- FIN -->
-
-
         </div>
 
     </section>
 
 
-
     <!-- ==================================================
-         PIE DE PÁGINA
+         FOOTER
     ================================================== -->
 
     <footer>
@@ -1492,7 +1748,6 @@
         hecho por tu autista 🖤
 
     </footer>
-
 
 
     <!-- ==================================================
@@ -1504,12 +1759,7 @@
 
         /* ==================================================
            CONTADOR
-
-           12 DE AGOSTO DE 2026
-
-           Agosto = 7 en JavaScript
         ================================================== */
-
 
         const startDate =
             new Date(
@@ -1523,14 +1773,11 @@
 
         function updateCounter() {
 
-
             const now =
                 new Date();
 
-
             const difference =
                 now - startDate;
-
 
             const totalSeconds =
                 Math.floor(
@@ -1584,7 +1831,6 @@
                 .getElementById("seconds")
                 .textContent =
                 seconds;
-
         }
 
 
@@ -1597,14 +1843,11 @@
         );
 
 
-
         /* ==================================================
-           SORPRESA FINAL
+           SORPRESA
         ================================================== */
 
-
         function showSecret() {
-
 
             const secret =
                 document.getElementById(
@@ -1621,21 +1864,17 @@
         }
 
 
-
         /* ==================================================
            CORAZONES DE LA SORPRESA
         ================================================== */
 
-
         function createHearts() {
-
 
             for (
                 let i = 0;
                 i < 20;
                 i++
             ) {
-
 
                 const heart =
                     document.createElement(
@@ -1734,8 +1973,207 @@
         }
 
 
-    </script>
+        /* ==================================================
+           YOUTUBE
+        ================================================== */
 
+        let youtubePlayer = null;
+
+        let currentSong = null;
+
+
+        /*
+           Cargamos la API de YouTube
+        */
+
+        const youtubeTag =
+            document.createElement(
+                "script"
+            );
+
+
+        youtubeTag.src =
+            "https://www.youtube.com/iframe_api";
+
+
+        const firstScriptTag =
+            document
+                .getElementsByTagName(
+                    "script"
+                )[0];
+
+
+        firstScriptTag
+            .parentNode
+            .insertBefore(
+                youtubeTag,
+                firstScriptTag
+            );
+
+
+        /*
+           YouTube llama esta función
+           cuando termina de cargar.
+        */
+
+        function onYouTubeIframeAPIReady() {
+
+            youtubePlayer =
+                new YT.Player(
+                    "youtube-player",
+                    {
+
+                        height: "200",
+
+                        width: "200",
+
+                        videoId: "",
+
+                        playerVars: {
+
+                            autoplay: 0,
+
+                            controls: 0,
+
+                            playsinline: 1,
+
+                            rel: 0
+
+                        },
+
+                        events: {
+
+                            onStateChange:
+                                onPlayerStateChange
+
+                        }
+
+                    }
+                );
+
+        }
+
+
+        /*
+           REPRODUCIR CANCIÓN
+        */
+
+        function playSong(
+            videoId,
+            songId
+        ) {
+
+
+            if (
+                currentSong === songId &&
+                youtubePlayer
+            ) {
+
+                youtubePlayer
+                    .pauseVideo();
+
+
+                currentSong =
+                    null;
+
+
+                document
+                    .querySelectorAll(
+                        ".song"
+                    )
+                    .forEach(
+                        song =>
+                            song
+                                .classList
+                                .remove(
+                                    "song-playing"
+                                )
+                    );
+
+
+                return;
+            }
+
+
+            document
+                .querySelectorAll(
+                    ".song"
+                )
+                .forEach(
+                    song =>
+                        song
+                            .classList
+                            .remove(
+                                "song-playing"
+                            )
+                );
+
+
+            document
+                .getElementById(
+                    songId
+                )
+                .classList
+                .add(
+                    "song-playing"
+                );
+
+
+            currentSong =
+                songId;
+
+
+            if (youtubePlayer) {
+
+                youtubePlayer
+                    .loadVideoById(
+                        videoId
+                    );
+
+
+                youtubePlayer
+                    .playVideo();
+
+            }
+
+        }
+
+
+        /*
+           CUANDO TERMINA UNA CANCIÓN
+        */
+
+        function onPlayerStateChange(
+            event
+        ) {
+
+            if (
+                event.data ===
+                YT.PlayerState.ENDED
+            ) {
+
+                document
+                    .querySelectorAll(
+                        ".song"
+                    )
+                    .forEach(
+                        song =>
+                            song
+                                .classList
+                                .remove(
+                                    "song-playing"
+                                )
+                    );
+
+
+                currentSong =
+                    null;
+
+            }
+
+        }
+
+    </script>
 
 </body>
 
