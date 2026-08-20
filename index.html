@@ -9,6 +9,10 @@
 
     <style>
 
+        /* ==================================================
+           ESTILOS GENERALES
+        ================================================== */
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -21,70 +25,57 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0d090d;
-            color: #f8edf3;
+
+            /* FONDO SIMPLE */
+            background: #111111;
+
+            color: #eeeeee;
+
             overflow-x: hidden;
         }
 
-        /* =========================
-           FONDO
-        ========================= */
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            z-index: -2;
-
-            background:
-                radial-gradient(
-                    circle at 20% 20%,
-                    rgba(120, 30, 75, 0.35),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 80%,
-                    rgba(70, 25, 80, 0.3),
-                    transparent 35%
-                ),
-                #0d090d;
-        }
-
-
-        /* =========================
-           CORAZONES
-        ========================= */
+        /* ==================================================
+           CORAZONES DISCRETOS
+        ================================================== */
 
         .hearts {
             position: fixed;
+
             inset: 0;
+
             pointer-events: none;
+
             overflow: hidden;
-            z-index: -1;
+
+            z-index: 0;
         }
 
         .heart {
             position: absolute;
-            bottom: -40px;
-            font-size: 18px;
+
+            bottom: -30px;
+
+            font-size: 14px;
+
             opacity: 0;
 
             animation:
-                subir 9s linear infinite;
+                subir 10s linear infinite;
         }
 
         .heart:nth-child(1) {
-            left: 8%;
+            left: 10%;
             animation-delay: 1s;
         }
 
         .heart:nth-child(2) {
-            left: 25%;
+            left: 30%;
             animation-delay: 4s;
         }
 
         .heart:nth-child(3) {
-            left: 47%;
+            left: 50%;
             animation-delay: 2s;
         }
 
@@ -101,168 +92,200 @@
         @keyframes subir {
 
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform: translateY(0);
                 opacity: 0;
             }
 
-            15% {
-                opacity: 0.5;
+            20% {
+                opacity: 0.25;
             }
 
-            85% {
-                opacity: 0.4;
+            80% {
+                opacity: 0.2;
             }
 
             100% {
-                transform:
-                    translateY(-110vh)
-                    rotate(360deg);
-
+                transform: translateY(-110vh);
                 opacity: 0;
             }
+
         }
 
 
-        /* =========================
+        /* ==================================================
            SECCIONES
-        ========================= */
+        ================================================== */
 
         section {
+
             min-height: 100vh;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             padding: 70px 20px;
+
+            position: relative;
+
+            z-index: 1;
         }
 
 
-        /* =========================
+        /* ==================================================
            PORTADA
-        ========================= */
+        ================================================== */
 
         .hero {
+
             text-align: center;
+
             flex-direction: column;
         }
 
         .mini {
-            color: #c997ad;
-            font-size: 13px;
+
+            color: #999999;
+
+            font-size: 12px;
+
             letter-spacing: 3px;
+
             text-transform: uppercase;
 
             margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(50px, 13vw, 100px);
+
+            font-size:
+                clamp(50px, 13vw, 95px);
+
             line-height: 0.95;
 
             margin-bottom: 25px;
 
-            color: #fff;
+            color: #eeeeee;
         }
 
         .hero h1 span {
-            color: #ff8dbb;
+
+            color: #d989aa;
         }
 
         .hero p {
+
             max-width: 550px;
 
-            color: #cbb7c1;
+            color: #aaaaaa;
 
             font-size: 17px;
+
             line-height: 1.8;
         }
 
 
-        /* =========================
-           BOTONES
-        ========================= */
+        /* ==================================================
+           BOTÓN
+        ================================================== */
 
         .button {
+
             display: inline-block;
 
             margin-top: 35px;
 
-            padding: 14px 25px;
+            padding:
+                13px 24px;
 
-            border-radius: 999px;
+            border-radius: 7px;
 
-            border: 1px solid #a84972;
+            border:
+                1px solid #444444;
 
-            background: rgba(168, 73, 114, 0.12);
+            background: #191919;
 
-            color: #fff;
+            color: #eeeeee;
 
             text-decoration: none;
 
             cursor: pointer;
 
-            transition: 0.3s;
+            font-size: 15px;
+
+            transition:
+                0.25s ease;
         }
 
         .button:hover {
-            background: #a84972;
 
-            transform: translateY(-3px);
+            background: #222222;
 
-            box-shadow:
-                0 10px 35px
-                rgba(168, 73, 114, 0.3);
+            border-color: #d989aa;
+
+            color: #f0a9c5;
+
+            transform:
+                translateY(-2px);
         }
 
 
-        /* =========================
+        /* ==================================================
            TITULOS
-        ========================= */
+        ================================================== */
 
         .section-title {
+
             text-align: center;
 
-            font-size: clamp(32px, 8vw, 48px);
+            font-size:
+                clamp(32px, 8vw, 48px);
 
             margin-bottom: 15px;
 
-            color: #fff;
+            color: #eeeeee;
         }
 
         .section-subtitle {
+
             text-align: center;
 
-            color: #bdaab4;
+            color: #888888;
 
             margin-bottom: 40px;
         }
 
 
-        /* =========================
+        /* ==================================================
            DESDE EL 12 DE AGOSTO
-        ========================= */
+        ================================================== */
 
         .beginning {
+
             flex-direction: column;
 
             text-align: center;
         }
 
         .date {
-            font-size: clamp(45px, 10vw, 75px);
+
+            font-size:
+                clamp(45px, 10vw, 75px);
 
             font-weight: bold;
 
-            color: #ff91bd;
+            color: #d989aa;
 
             margin: 25px 0;
         }
 
         .beginning-text {
+
             max-width: 600px;
 
-            color: #d3c2ca;
+            color: #aaaaaa;
 
             line-height: 1.8;
 
@@ -270,22 +293,24 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            CONTADOR
-        ========================= */
+        ================================================== */
 
         .counter {
+
             flex-direction: column;
 
             text-align: center;
         }
 
         .counter-container {
+
             display: flex;
 
             justify-content: center;
 
-            gap: 15px;
+            gap: 12px;
 
             flex-wrap: wrap;
 
@@ -293,102 +318,118 @@
         }
 
         .time-box {
+
             width: 105px;
 
             padding: 20px 10px;
 
-            border-radius: 18px;
+            border-radius: 8px;
 
-            background:
-                rgba(255, 255, 255, 0.045);
+            background: #181818;
 
             border:
-                1px solid
-                rgba(255, 255, 255, 0.08);
+                1px solid #292929;
         }
 
         .time-box strong {
+
             display: block;
 
             font-size: 32px;
 
-            color: #ff91bd;
+            color: #d989aa;
         }
 
         .time-box span {
-            font-size: 12px;
 
-            color: #a997a1;
+            font-size: 11px;
+
+            color: #777777;
+
+            letter-spacing: 1px;
         }
 
 
-        /* =========================
+        /* ==================================================
            COSAS QUE ME ENCANTAN
-        ========================= */
+        ================================================== */
 
         .things {
+
             flex-direction: column;
         }
 
         .things-grid {
+
             width: 100%;
+
             max-width: 850px;
 
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
 
-            gap: 18px;
+            gap: 15px;
 
             margin-top: 30px;
         }
 
         .thing {
+
             padding: 25px;
 
-            border-radius: 20px;
+            border-radius: 8px;
 
-            background:
-                rgba(255, 255, 255, 0.04);
+            background: #181818;
 
             border:
-                1px solid
-                rgba(255, 255, 255, 0.07);
+                1px solid #292929;
 
-            transition: 0.3s;
+            transition:
+                0.25s ease;
         }
 
         .thing:hover {
-            transform: translateY(-5px);
+
+            transform:
+                translateY(-3px);
 
             border-color:
-                rgba(255, 145, 189, 0.3);
+                #444444;
         }
 
         .thing h3 {
-            color: #ff91bd;
+
+            color: #d989aa;
 
             margin-bottom: 10px;
         }
 
         .thing p {
-            color: #c6b5bd;
+
+            color: #aaaaaa;
 
             line-height: 1.6;
         }
 
 
-        /* =========================
+        /* ==================================================
            GALERÍA
-        ========================= */
+        ================================================== */
 
         .gallery-section {
+
             flex-direction: column;
         }
 
         .gallery {
+
             width: 100%;
+
             max-width: 900px;
 
             display: flex;
@@ -399,60 +440,71 @@
 
             flex-wrap: wrap;
 
-            gap: 25px;
+            gap: 28px;
 
             margin-top: 35px;
         }
 
         .photo {
+
             width: 240px;
 
-            padding: 10px 10px 18px;
+            padding:
+                10px 10px 18px;
 
-            background: #f1e8eb;
+            background: #eeeeee;
 
-            color: #222;
+            color: #222222;
 
             box-shadow:
-                0 15px 35px
+                0 12px 25px
                 rgba(0, 0, 0, 0.4);
 
-            transition: 0.35s;
+            transition:
+                0.3s ease;
         }
 
         .photo:hover {
+
             transform:
                 rotate(0deg)
-                scale(1.06);
+                scale(1.05);
 
             z-index: 5;
         }
 
         .photo:nth-child(1) {
-            transform: rotate(-5deg);
+            transform:
+                rotate(-5deg);
         }
 
         .photo:nth-child(2) {
-            transform: rotate(4deg);
+            transform:
+                rotate(4deg);
         }
 
         .photo:nth-child(3) {
-            transform: rotate(-3deg);
+            transform:
+                rotate(-3deg);
         }
 
         .photo:nth-child(4) {
-            transform: rotate(5deg);
+            transform:
+                rotate(5deg);
         }
 
         .photo:nth-child(5) {
-            transform: rotate(-4deg);
+            transform:
+                rotate(-4deg);
         }
 
         .photo:nth-child(6) {
-            transform: rotate(3deg);
+            transform:
+                rotate(3deg);
         }
 
         .photo img {
+
             width: 100%;
 
             aspect-ratio: 1 / 1;
@@ -463,6 +515,7 @@
         }
 
         .photo p {
+
             font-family:
                 "Comic Sans MS",
                 cursive;
@@ -475,79 +528,84 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            MÚSICA
-        ========================= */
+        ================================================== */
 
         .music {
+
             flex-direction: column;
 
             text-align: center;
         }
 
         .music-card {
+
             width: 100%;
 
             max-width: 500px;
 
             padding: 35px;
 
-            border-radius: 25px;
+            border-radius: 8px;
 
-            background:
-                rgba(255, 255, 255, 0.045);
+            background: #181818;
 
             border:
-                1px solid
-                rgba(255, 255, 255, 0.08);
+                1px solid #292929;
         }
 
         .music-icon {
-            font-size: 50px;
+
+            font-size: 45px;
 
             margin-bottom: 15px;
         }
 
         .music-card h3 {
-            color: #ff91bd;
+
+            color: #d989aa;
 
             margin-bottom: 10px;
         }
 
         .music-card p {
-            color: #bdaab4;
+
+            color: #999999;
 
             line-height: 1.6;
         }
 
 
-        /* =========================
+        /* ==================================================
            CARTA
-        ========================= */
+        ================================================== */
 
         .letter {
+
             flex-direction: column;
         }
 
         .letter-card {
+
             width: 100%;
 
             max-width: 700px;
 
-            padding: 40px 30px;
+            padding:
+                40px 30px;
 
-            border-radius: 25px;
+            border-radius: 8px;
 
-            background:
-                rgba(255, 255, 255, 0.045);
+            background: #181818;
 
             border:
-                1px solid
-                rgba(255, 255, 255, 0.08);
+                1px solid #292929;
         }
 
         .letter-card p {
-            color: #d8c6ce;
+
+            color: #c2b7bc;
 
             font-size: 17px;
 
@@ -557,27 +615,30 @@
         }
 
         .signature {
+
             margin-top: 30px;
 
             text-align: right;
 
-            color: #ff91bd;
+            color: #d989aa;
 
             font-style: italic;
         }
 
 
-        /* =========================
+        /* ==================================================
            SORPRESA
-        ========================= */
+        ================================================== */
 
         .surprise {
+
             flex-direction: column;
 
             text-align: center;
         }
 
         .secret {
+
             display: none;
 
             max-width: 600px;
@@ -586,84 +647,97 @@
 
             padding: 30px;
 
-            border-radius: 25px;
+            border-radius: 8px;
 
-            background:
-                rgba(120, 30, 75, 0.18);
+            background: #181818;
 
             border:
-                1px solid
-                rgba(255, 145, 189, 0.2);
+                1px solid #333333;
 
             animation:
-                aparecer 0.6s ease;
+                aparecer 0.5s ease;
         }
 
         .secret p {
-            font-size: 22px;
+
+            font-size: 21px;
 
             line-height: 1.7;
 
-            color: #ffe5ef;
+            color: #eeeeee;
         }
 
         @keyframes aparecer {
 
             from {
+
                 opacity: 0;
-                transform: scale(0.8);
+
+                transform:
+                    translateY(10px);
             }
 
             to {
+
                 opacity: 1;
-                transform: scale(1);
+
+                transform:
+                    translateY(0);
             }
 
         }
 
 
-        /* =========================
+        /* ==================================================
            FOOTER
-        ========================= */
+        ================================================== */
 
         footer {
+
             padding: 30px;
 
             text-align: center;
 
-            color: #796871;
+            color: #555555;
 
             font-size: 12px;
         }
 
 
-        /* =========================
+        /* ==================================================
            CELULAR
-        ========================= */
+        ================================================== */
 
         @media (max-width: 600px) {
 
             section {
+
                 padding:
                     60px 18px;
             }
 
             .time-box {
+
                 width: 78px;
 
-                padding: 15px 5px;
+                padding:
+                    15px 5px;
             }
 
             .time-box strong {
+
                 font-size: 25px;
             }
 
             .photo {
+
                 width: 210px;
             }
 
             .letter-card {
-                padding: 30px 22px;
+
+                padding:
+                    30px 22px;
             }
 
         }
@@ -675,7 +749,9 @@
 <body>
 
 
-    <!-- CORAZONES -->
+    <!-- ==================================================
+         CORAZONES
+    ================================================== -->
 
     <div class="hearts">
 
@@ -689,9 +765,9 @@
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          1. PORTADA
-    ================================== -->
+    ================================================== -->
 
     <section class="hero">
 
@@ -699,42 +775,64 @@
             una página hecha para ti
         </div>
 
+
         <h1>
+
             hola,<br>
-            <span>Emonuela 🖤</span>
+
+            <span>
+                Emonuela 🖤
+            </span>
+
         </h1>
+
 
         <!-- ✏️ EDITA AQUÍ -->
 
         <p>
+
             No sabía muy bien qué hacerte,
             así que terminé haciendo una página web xd.
+
             Espero que te guste.
+
         </p>
 
         <!-- FIN EDITA AQUÍ -->
 
 
-        <a href="#inicio" class="button">
+        <a
+            href="#inicio"
+            class="button">
+
             ↓ sigue bajando
+
         </a>
 
     </section>
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          2. DESDE EL 12 DE AGOSTO
-    ================================== -->
+    ================================================== -->
 
-    <section class="beginning" id="inicio">
+    <section
+        class="beginning"
+        id="inicio">
+
 
         <h2 class="section-title">
+
             Desde el...
+
         </h2>
 
+
         <div class="date">
+
             12 de agosto 🖤
+
         </div>
 
 
@@ -756,26 +854,34 @@
 
         <!-- FIN EDITA AQUÍ -->
 
+
     </section>
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          3. CONTADOR
-    ================================== -->
+    ================================================== -->
 
     <section class="counter">
 
+
         <h2 class="section-title">
+
             Y el tiempo sigue pasando...
+
         </h2>
 
+
         <p class="section-subtitle">
+
             pero cada segundo contigo cuenta 🖤
+
         </p>
 
 
         <div class="counter-container">
+
 
             <div class="time-box">
 
@@ -828,24 +934,32 @@
 
             </div>
 
+
         </div>
 
     </section>
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          4. COSAS QUE ME ENCANTAN DE TI
-    ================================== -->
+    ================================================== -->
 
     <section class="things">
 
+
         <h2 class="section-title">
+
             Cosas que me encantan de ti
+
         </h2>
 
+
         <p class="section-subtitle">
-            podría seguir escribiendo pero nos quedamos hasta mañana xd
+
+            podría seguir escribiendo pero nos quedamos
+            hasta mañana xd
+
         </p>
 
 
@@ -860,15 +974,20 @@
                     Tu forma de ser
                 </h3>
 
+
                 <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
+
                     Me encanta simplemente cómo eres.
-                    No sé explicarlo bien, pero hay algo
-                    en tu forma de ser que me encanta.
+                    No sé explicarlo bien,
+                    pero hay algo en tu forma de ser
+                    que me encanta.
+
                 </p>
 
-                <!-- FIN EDITA AQUÍ -->
+                <!-- FIN -->
+
 
             </div>
 
@@ -882,14 +1001,20 @@
                     Tus ojos
                 </h3>
 
+
                 <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
-                    Tus ojos tienen algo que no sé qué es,
-                    pero podría quedarme mirándolos muchísimo tiempo.
+
+                    Tus ojos tienen algo
+                    que no sé qué es,
+                    pero podría quedarme
+                    mirándolos muchísimo tiempo.
+
                 </p>
 
-                <!-- FIN EDITA AQUÍ -->
+                <!-- FIN -->
+
 
             </div>
 
@@ -903,14 +1028,19 @@
                     Tu pelo
                 </h3>
 
+
                 <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
-                    No sé qué tiene el color natural de tu pelo
-                    pero ahhhhhh me encanta demasiado.
+
+                    No sé qué tiene el color natural
+                    de tu pelo pero ahhhhhh
+                    me encanta demasiado.
+
                 </p>
 
-                <!-- FIN EDITA AQUÍ -->
+                <!-- FIN -->
+
 
             </div>
 
@@ -924,15 +1054,19 @@
                     Tu autismo 🖤
                 </h3>
 
+
                 <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
+
                     No eres autista obviamente JAJAJA,
                     pero ya quedó como parte del lore
                     de Emonuela y Emonuel.
+
                 </p>
 
-                <!-- FIN EDITA AQUÍ -->
+                <!-- FIN -->
+
 
             </div>
 
@@ -946,20 +1080,22 @@
                     Tu gato webudo
                 </h3>
 
+
                 <!-- ✏️ EDITA AQUÍ -->
 
                 <p>
+
                     Mención honorífica para ese gato
-                    y sus dos enormes razones para existir 💀
+                    y sus dos enormes razones
+                    para existir 💀
+
                 </p>
 
-                <!-- FIN EDITA AQUÍ -->
+                <!-- FIN -->
+
 
             </div>
 
-
-
-            <!-- PUEDES AGREGAR MÁS COSAS AQUÍ -->
 
         </div>
 
@@ -967,18 +1103,25 @@
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          5. MI EMONUELA
-    ================================== -->
+    ================================================== -->
 
     <section class="gallery-section">
 
+
         <h2 class="section-title">
+
             Mi Emonuela 🖤
+
         </h2>
 
+
         <p class="section-subtitle">
-            fotos lindas, fotos raras y probablemente alguna que me quieras reclamar xd
+
+            fotos lindas, fotos raras y probablemente
+            alguna que me quieras reclamar xd
+
         </p>
 
 
@@ -989,10 +1132,12 @@
 
             <div class="photo">
 
-                <img src="fotos/emonuela1.jpg"
-                     alt="Emonuela">
+                <img
+                    src="fotos/emonuela1.jpg"
+                    alt="Emonuela">
 
-                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <!-- ✏️ TEXTO -->
 
                 <p>
                     mi niña 🖤
@@ -1006,10 +1151,12 @@
 
             <div class="photo">
 
-                <img src="fotos/emonuela2.jpg"
-                     alt="Emonuela">
+                <img
+                    src="fotos/emonuela2.jpg"
+                    alt="Emonuela">
 
-                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <!-- ✏️ TEXTO -->
 
                 <p>
                     demasiado linda
@@ -1023,10 +1170,12 @@
 
             <div class="photo">
 
-                <img src="fotos/emonuela3.jpg"
-                     alt="Emonuela">
+                <img
+                    src="fotos/emonuela3.jpg"
+                    alt="Emonuela">
 
-                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <!-- ✏️ TEXTO -->
 
                 <p>
                     esta foto me encanta
@@ -1040,10 +1189,12 @@
 
             <div class="photo">
 
-                <img src="fotos/emonuela4.jpg"
-                     alt="Emonuela">
+                <img
+                    src="fotos/emonuela4.jpg"
+                    alt="Emonuela">
 
-                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <!-- ✏️ TEXTO -->
 
                 <p>
                     xd
@@ -1057,10 +1208,12 @@
 
             <div class="photo">
 
-                <img src="fotos/emonuela5.jpg"
-                     alt="Emonuela">
+                <img
+                    src="fotos/emonuela5.jpg"
+                    alt="Emonuela">
 
-                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <!-- ✏️ TEXTO -->
 
                 <p>
                     🖤
@@ -1070,14 +1223,16 @@
 
 
 
-            <!-- 📸 FOTO 6: GATO -->
+            <!-- 📸 FOTO 6 -->
 
             <div class="photo">
 
-                <img src="fotos/gato-webudo.jpg"
-                     alt="El gato webudo">
+                <img
+                    src="fotos/gato-webudo.jpg"
+                    alt="El gato webudo">
 
-                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <!-- ✏️ TEXTO -->
 
                 <p>
                     el verdadero protagonista 💀
@@ -1092,47 +1247,47 @@
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          6. NUESTRA MÚSICA
-    ================================== -->
+    ================================================== -->
 
     <section class="music">
 
+
         <h2 class="section-title">
+
             Nuestra música 🎧
+
         </h2>
 
 
         <div class="music-card">
+
 
             <div class="music-icon">
                 🎧
             </div>
 
 
-            <!-- ✏️ EDITA AQUÍ -->
+            <!-- ✏️ EDITA CUANDO ELIJAS CANCIÓN -->
 
             <h3>
+
                 AQUÍ VA NUESTRA CANCIÓN
+
             </h3>
 
+
             <p>
+
                 Todavía no sé cuál poner,
                 así que este espacio queda reservado
                 para la canción que terminemos eligiendo.
+
             </p>
 
-            <!-- FIN EDITA AQUÍ -->
+            <!-- FIN -->
 
-
-            <!--
-                🎵 CUANDO ELIJAS LA CANCIÓN:
-
-                Puedes poner aquí un reproductor de Spotify,
-                YouTube o simplemente un enlace.
-
-                Lo hacemos juntos cuando hayas elegido.
-            -->
 
         </div>
 
@@ -1140,23 +1295,26 @@
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          7. CARTA
-    ================================== -->
+    ================================================== -->
 
     <section class="letter">
 
+
         <h2 class="section-title">
+
             Una carta para ti 💌
+
         </h2>
 
 
         <div class="letter-card">
 
 
-            <!-- =================================
-                 ✏️✏️✏️ ESCRIBE TU CARTA AQUÍ
-            ================================== -->
+            <!-- ==================================================
+                 ✏️✏️✏️ TU CARTA EMPIEZA AQUÍ
+            ================================================== -->
 
 
             <p>
@@ -1165,13 +1323,14 @@
 
                 <br><br>
 
+
                 <!-- ✏️ ESCRIBE AQUÍ -->
 
                 No sé qué decirte todavía,
                 así que esta parte la voy a escribir yo
                 cuando sepa exactamente qué quiero decirte.
 
-                <!-- FIN ✏️ -->
+                <!-- FIN -->
 
             </p>
 
@@ -1207,9 +1366,9 @@
             </div>
 
 
-            <!-- =================================
-                 FIN DE LA CARTA
-            ================================== -->
+            <!-- ==================================================
+                 FIN DE TU CARTA
+            ================================================== -->
 
         </div>
 
@@ -1217,18 +1376,24 @@
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          8. SORPRESA FINAL
-    ================================== -->
+    ================================================== -->
 
     <section class="surprise">
 
+
         <h2 class="section-title">
+
             Espera...
+
         </h2>
 
+
         <p class="section-subtitle">
+
             todavía falta una cosa.
+
         </p>
 
 
@@ -1244,6 +1409,7 @@
         <div
             class="secret"
             id="secret">
+
 
             <!-- ✏️ EDITA AQUÍ -->
 
@@ -1262,18 +1428,25 @@
                 <br><br>
 
                 <strong>
+
                     tu autista 🖤
+
                 </strong>
 
             </p>
 
-            <!-- FIN EDITA AQUÍ -->
+            <!-- FIN -->
+
 
         </div>
 
     </section>
 
 
+
+    <!-- ==================================================
+         PIE DE PÁGINA
+    ================================================== -->
 
     <footer>
 
@@ -1283,31 +1456,38 @@
 
 
 
-    <!-- =================================
+    <!-- ==================================================
          JAVASCRIPT
-    ================================== -->
+    ================================================== -->
 
     <script>
 
 
-        /* =========================
+        /* ==================================================
            CONTADOR
 
            12 DE AGOSTO DE 2026
 
-           IMPORTANTE:
            Agosto = 7 en JavaScript
-        ========================= */
+        ================================================== */
 
 
         const startDate =
-            new Date(2026, 7, 12, 0, 0);
+            new Date(
+                2026,
+                7,
+                12,
+                0,
+                0
+            );
 
 
         function updateCounter() {
 
+
             const now =
                 new Date();
+
 
             const difference =
                 now - startDate;
@@ -1345,22 +1525,26 @@
 
             document
                 .getElementById("days")
-                .textContent = days;
+                .textContent =
+                days;
 
 
             document
                 .getElementById("hours")
-                .textContent = hours;
+                .textContent =
+                hours;
 
 
             document
                 .getElementById("minutes")
-                .textContent = minutes;
+                .textContent =
+                minutes;
 
 
             document
                 .getElementById("seconds")
-                .textContent = seconds;
+                .textContent =
+                seconds;
 
         }
 
@@ -1375,12 +1559,13 @@
 
 
 
-        /* =========================
-           SORPRESA
-        ========================= */
+        /* ==================================================
+           SORPRESA FINAL
+        ================================================== */
 
 
         function showSecret() {
+
 
             const secret =
                 document.getElementById(
@@ -1398,18 +1583,20 @@
 
 
 
-        /* =========================
-           CORAZONES EXTRA
-        ========================= */
+        /* ==================================================
+           CORAZONES DE LA SORPRESA
+        ================================================== */
 
 
         function createHearts() {
 
+
             for (
                 let i = 0;
-                i < 25;
+                i < 20;
                 i++
             ) {
+
 
                 const heart =
                     document.createElement(
@@ -1434,8 +1621,10 @@
 
 
                 heart.style.fontSize =
-                    (15 + Math.random() * 25)
-                    + "px";
+                    (
+                        14 +
+                        Math.random() * 20
+                    ) + "px";
 
 
                 heart.style.pointerEvents =
@@ -1447,51 +1636,64 @@
 
 
                 document.body
-                    .appendChild(heart);
+                    .appendChild(
+                        heart
+                    );
 
 
-                heart.animate(
+                const animation =
+                    heart.animate(
 
-                    [
+                        [
+
+                            {
+                                transform:
+                                    "scale(0)",
+
+                                opacity: 0
+                            },
+
+                            {
+                                transform:
+                                    "scale(1.2)",
+
+                                opacity: 1
+                            },
+
+                            {
+                                transform:
+                                    "scale(0)",
+
+                                opacity: 0
+                            }
+
+                        ],
+
                         {
-                            transform:
-                                "scale(0) rotate(0deg)",
-                            opacity: 0
-                        },
 
-                        {
-                            transform:
-                                "scale(1.4) rotate(180deg)",
-                            opacity: 1
-                        },
+                            duration:
+                                1800 +
+                                Math.random() * 1200,
 
-                        {
-                            transform:
-                                "scale(0) rotate(360deg)",
-                            opacity: 0
+                            easing:
+                                "ease-out"
+
                         }
-                    ],
 
-                    {
-                        duration:
-                            2000 +
-                            Math.random() * 1500,
-
-                        easing:
-                            "ease-out"
-                    }
-
-                );
+                    );
 
 
-                setTimeout(
-                    () => heart.remove(),
-                    3500
-                );
+                animation
+                    .finished
+                    .then(
+                        () =>
+                            heart.remove()
+                    );
 
             }
 
         }
+
 
     </script>
 
