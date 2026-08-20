@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Para el amor de mi vida ❤️</title>
+    <title>Emonuela 🖤</title>
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -19,254 +21,594 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0f0714;
-            color: white;
+            background: #0d090d;
+            color: #f8edf3;
             overflow-x: hidden;
         }
 
-        /* Fondo */
-        .background {
+        /* =========================
+           FONDO
+        ========================= */
+
+        body::before {
+            content: "";
             position: fixed;
             inset: 0;
             z-index: -2;
+
             background:
-                radial-gradient(circle at 20% 20%, #8b164f 0%, transparent 30%),
-                radial-gradient(circle at 80% 80%, #4b155f 0%, transparent 30%),
-                linear-gradient(135deg, #120713, #22091d, #100817);
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(120, 30, 75, 0.35),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 80%,
+                    rgba(70, 25, 80, 0.3),
+                    transparent 35%
+                ),
+                #0d090d;
         }
 
-        /* Corazones */
+
+        /* =========================
+           CORAZONES
+        ========================= */
+
         .hearts {
             position: fixed;
             inset: 0;
             pointer-events: none;
-            z-index: -1;
             overflow: hidden;
+            z-index: -1;
         }
 
         .heart {
             position: absolute;
-            bottom: -50px;
-            font-size: 20px;
-            opacity: 0.7;
-            animation: float 8s linear infinite;
+            bottom: -40px;
+            font-size: 18px;
+            opacity: 0;
+
+            animation:
+                subir 9s linear infinite;
         }
 
         .heart:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
+            left: 8%;
+            animation-delay: 1s;
         }
 
         .heart:nth-child(2) {
             left: 25%;
-            animation-delay: 2s;
-        }
-
-        .heart:nth-child(3) {
-            left: 45%;
             animation-delay: 4s;
         }
 
+        .heart:nth-child(3) {
+            left: 47%;
+            animation-delay: 2s;
+        }
+
         .heart:nth-child(4) {
-            left: 65%;
-            animation-delay: 1s;
+            left: 70%;
+            animation-delay: 6s;
         }
 
         .heart:nth-child(5) {
-            left: 85%;
+            left: 90%;
             animation-delay: 3s;
         }
 
-        @keyframes float {
+        @keyframes subir {
+
             0% {
                 transform: translateY(0) rotate(0deg);
                 opacity: 0;
             }
 
-            20% {
-                opacity: 0.8;
+            15% {
+                opacity: 0.5;
+            }
+
+            85% {
+                opacity: 0.4;
             }
 
             100% {
-                transform: translateY(-110vh) rotate(360deg);
+                transform:
+                    translateY(-110vh)
+                    rotate(360deg);
+
                 opacity: 0;
             }
         }
 
-        /* Secciones */
+
+        /* =========================
+           SECCIONES
+        ========================= */
+
         section {
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 20px;
+
+            padding: 70px 20px;
         }
+
+
+        /* =========================
+           PORTADA
+        ========================= */
 
         .hero {
             text-align: center;
             flex-direction: column;
         }
 
-        .small {
-            font-size: 15px;
+        .mini {
+            color: #c997ad;
+            font-size: 13px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #ffb5d4;
+
             margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: clamp(45px, 12vw, 90px);
+        .hero h1 {
+            font-size: clamp(50px, 13vw, 100px);
             line-height: 0.95;
+
             margin-bottom: 25px;
-            background: linear-gradient(90deg, #fff, #ff9fc9, #fff);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
+
+            color: #fff;
         }
 
-        @keyframes shine {
-            0% {
-                background-position: 0%;
-            }
-
-            100% {
-                background-position: 200%;
-            }
+        .hero h1 span {
+            color: #ff8dbb;
         }
 
         .hero p {
-            max-width: 600px;
-            color: #e9cdda;
-            font-size: 18px;
-            line-height: 1.7;
+            max-width: 550px;
+
+            color: #cbb7c1;
+
+            font-size: 17px;
+            line-height: 1.8;
         }
+
+
+        /* =========================
+           BOTONES
+        ========================= */
 
         .button {
             display: inline-block;
+
             margin-top: 35px;
-            padding: 15px 28px;
+
+            padding: 14px 25px;
+
             border-radius: 999px;
-            border: 1px solid #ff72ac;
-            background: rgba(255, 70, 140, 0.15);
-            color: white;
+
+            border: 1px solid #a84972;
+
+            background: rgba(168, 73, 114, 0.12);
+
+            color: #fff;
+
             text-decoration: none;
+
             cursor: pointer;
+
             transition: 0.3s;
-            font-size: 16px;
         }
 
         .button:hover {
-            background: #ff4f9a;
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(255, 79, 154, 0.5);
+            background: #a84972;
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 10px 35px
+                rgba(168, 73, 114, 0.3);
         }
 
-        /* Carta */
-        .card {
-            max-width: 700px;
-            width: 100%;
-            padding: 40px 30px;
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(15px);
-            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
-        }
 
-        .card h2 {
+        /* =========================
+           TITULOS
+        ========================= */
+
+        .section-title {
             text-align: center;
-            font-size: 35px;
-            margin-bottom: 25px;
-            color: #ff9fc9;
-        }
 
-        .card p {
-            font-size: 17px;
-            line-height: 1.9;
-            color: #f2dce8;
+            font-size: clamp(32px, 8vw, 48px);
+
             margin-bottom: 15px;
+
+            color: #fff;
         }
 
-        .signature {
-            text-align: right;
-            margin-top: 30px;
-            color: #ff9fc9;
-            font-style: italic;
-        }
-
-        /* Contador */
-        .counter {
+        .section-subtitle {
             text-align: center;
+
+            color: #bdaab4;
+
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           DESDE EL 12 DE AGOSTO
+        ========================= */
+
+        .beginning {
             flex-direction: column;
+
+            text-align: center;
         }
 
-        .counter h2 {
-            font-size: 38px;
-            margin-bottom: 15px;
+        .date {
+            font-size: clamp(45px, 10vw, 75px);
+
+            font-weight: bold;
+
+            color: #ff91bd;
+
+            margin: 25px 0;
         }
 
-        .counter p {
-            color: #e3c9d7;
-            margin-bottom: 35px;
+        .beginning-text {
+            max-width: 600px;
+
+            color: #d3c2ca;
+
+            line-height: 1.8;
+
+            font-size: 17px;
         }
 
-        .time {
+
+        /* =========================
+           CONTADOR
+        ========================= */
+
+        .counter {
+            flex-direction: column;
+
+            text-align: center;
+        }
+
+        .counter-container {
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
+
+            margin-top: 30px;
         }
 
         .time-box {
-            min-width: 90px;
-            padding: 20px 15px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 105px;
+
+            padding: 20px 10px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255, 255, 255, 0.045);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.08);
         }
 
         .time-box strong {
             display: block;
-            font-size: 30px;
-            color: #ff8fbe;
+
+            font-size: 32px;
+
+            color: #ff91bd;
         }
 
         .time-box span {
-            color: #dcb9ca;
-            font-size: 13px;
+            font-size: 12px;
+
+            color: #a997a1;
         }
 
-        /* Sorpresa */
-        .surprise {
-            text-align: center;
+
+        /* =========================
+           COSAS QUE ME ENCANTAN
+        ========================= */
+
+        .things {
             flex-direction: column;
         }
 
-        .surprise h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
+        .things-grid {
+            width: 100%;
+            max-width: 850px;
 
-        #secret {
-            display: none;
-            max-width: 600px;
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 18px;
+
             margin-top: 30px;
-            padding: 30px;
+        }
+
+        .thing {
+            padding: 25px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, 0.04);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.07);
+
+            transition: 0.3s;
+        }
+
+        .thing:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(255, 145, 189, 0.3);
+        }
+
+        .thing h3 {
+            color: #ff91bd;
+
+            margin-bottom: 10px;
+        }
+
+        .thing p {
+            color: #c6b5bd;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           GALERÍA
+        ========================= */
+
+        .gallery-section {
+            flex-direction: column;
+        }
+
+        .gallery {
+            width: 100%;
+            max-width: 900px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 25px;
+
+            margin-top: 35px;
+        }
+
+        .photo {
+            width: 240px;
+
+            padding: 10px 10px 18px;
+
+            background: #f1e8eb;
+
+            color: #222;
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.4);
+
+            transition: 0.35s;
+        }
+
+        .photo:hover {
+            transform:
+                rotate(0deg)
+                scale(1.06);
+
+            z-index: 5;
+        }
+
+        .photo:nth-child(1) {
+            transform: rotate(-5deg);
+        }
+
+        .photo:nth-child(2) {
+            transform: rotate(4deg);
+        }
+
+        .photo:nth-child(3) {
+            transform: rotate(-3deg);
+        }
+
+        .photo:nth-child(4) {
+            transform: rotate(5deg);
+        }
+
+        .photo:nth-child(5) {
+            transform: rotate(-4deg);
+        }
+
+        .photo:nth-child(6) {
+            transform: rotate(3deg);
+        }
+
+        .photo img {
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .photo p {
+            font-family:
+                "Comic Sans MS",
+                cursive;
+
+            text-align: center;
+
+            margin-top: 12px;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MÚSICA
+        ========================= */
+
+        .music {
+            flex-direction: column;
+
+            text-align: center;
+        }
+
+        .music-card {
+            width: 100%;
+
+            max-width: 500px;
+
+            padding: 35px;
+
             border-radius: 25px;
-            background: rgba(255, 80, 150, 0.12);
-            border: 1px solid rgba(255, 120, 180, 0.3);
-            animation: appear 0.7s ease;
+
+            background:
+                rgba(255, 255, 255, 0.045);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.08);
         }
 
-        #secret p {
-            font-size: 20px;
-            line-height: 1.8;
-            color: #ffe3ef;
+        .music-icon {
+            font-size: 50px;
+
+            margin-bottom: 15px;
         }
 
-        @keyframes appear {
+        .music-card h3 {
+            color: #ff91bd;
+
+            margin-bottom: 10px;
+        }
+
+        .music-card p {
+            color: #bdaab4;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           CARTA
+        ========================= */
+
+        .letter {
+            flex-direction: column;
+        }
+
+        .letter-card {
+            width: 100%;
+
+            max-width: 700px;
+
+            padding: 40px 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(255, 255, 255, 0.045);
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.08);
+        }
+
+        .letter-card p {
+            color: #d8c6ce;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            margin-bottom: 18px;
+        }
+
+        .signature {
+            margin-top: 30px;
+
+            text-align: right;
+
+            color: #ff91bd;
+
+            font-style: italic;
+        }
+
+
+        /* =========================
+           SORPRESA
+        ========================= */
+
+        .surprise {
+            flex-direction: column;
+
+            text-align: center;
+        }
+
+        .secret {
+            display: none;
+
+            max-width: 600px;
+
+            margin-top: 30px;
+
+            padding: 30px;
+
+            border-radius: 25px;
+
+            background:
+                rgba(120, 30, 75, 0.18);
+
+            border:
+                1px solid
+                rgba(255, 145, 189, 0.2);
+
+            animation:
+                aparecer 0.6s ease;
+        }
+
+        .secret p {
+            font-size: 22px;
+
+            line-height: 1.7;
+
+            color: #ffe5ef;
+        }
+
+        @keyframes aparecer {
+
             from {
                 opacity: 0;
                 transform: scale(0.8);
@@ -276,245 +618,884 @@
                 opacity: 1;
                 transform: scale(1);
             }
+
         }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
+            padding: 30px;
+
             text-align: center;
-            padding: 30px 20px;
-            color: #9f8292;
-            font-size: 13px;
+
+            color: #796871;
+
+            font-size: 12px;
         }
 
-        @media (max-width: 500px) {
-            .card {
-                padding: 30px 22px;
-            }
 
-            .card h2 {
-                font-size: 29px;
-            }
+        /* =========================
+           CELULAR
+        ========================= */
 
-            .card p {
-                font-size: 16px;
-            }
+        @media (max-width: 600px) {
 
-            .counter h2,
-            .surprise h2 {
-                font-size: 30px;
+            section {
+                padding:
+                    60px 18px;
             }
 
             .time-box {
-                min-width: 75px;
-                padding: 15px 10px;
+                width: 78px;
+
+                padding: 15px 5px;
             }
 
             .time-box strong {
-                font-size: 24px;
+                font-size: 25px;
             }
+
+            .photo {
+                width: 210px;
+            }
+
+            .letter-card {
+                padding: 30px 22px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <div class="background"></div>
 
-    <!-- Corazones flotando -->
+    <!-- CORAZONES -->
+
     <div class="hearts">
-        <div class="heart">❤️</div>
-        <div class="heart">💗</div>
-        <div class="heart">💕</div>
-        <div class="heart">💖</div>
-        <div class="heart">❤️</div>
+
+        <div class="heart">🖤</div>
+        <div class="heart">🖤</div>
+        <div class="heart">🖤</div>
+        <div class="heart">🖤</div>
+        <div class="heart">🖤</div>
+
     </div>
 
-    <!-- PORTADA -->
+
+
+    <!-- =================================
+         1. PORTADA
+    ================================== -->
+
     <section class="hero">
 
-        <div class="small">Una pequeña página para ti</div>
+        <div class="mini">
+            una página hecha para ti
+        </div>
 
-        <h1>Te amo ❤️</h1>
+        <h1>
+            hola,<br>
+            <span>Emonuela 🖤</span>
+        </h1>
+
+        <!-- ✏️ EDITA AQUÍ -->
 
         <p>
-            Puede que esto sea solamente una página web...
-            pero detrás de cada palabra hay alguien que te quiere
-            muchísimo.
+            No sabía muy bien qué hacerte,
+            así que terminé haciendo una página web xd.
+            Espero que te guste.
         </p>
 
-        <a href="#carta" class="button">
-            Hay algo que quiero decirte ↓
+        <!-- FIN EDITA AQUÍ -->
+
+
+        <a href="#inicio" class="button">
+            ↓ sigue bajando
         </a>
 
     </section>
 
-    <!-- CARTA -->
-    <section id="carta">
 
-        <div class="card">
 
-            <h2>Para ti 💌</h2>
+    <!-- =================================
+         2. DESDE EL 12 DE AGOSTO
+    ================================== -->
 
-            <p>
-                No sé exactamente en qué momento te convertiste
-                en una persona tan importante para mí.
-                Solo sé que desde que estás en mi vida,
-                hay momentos que se sienten mucho más bonitos.
-            </p>
+    <section class="beginning" id="inicio">
 
-            <p>
-                Me gusta poder compartir contigo mis días,
-                mis tonterías, mis pensamientos y hasta esas
-                conversaciones que probablemente no tienen ningún sentido.
-            </p>
+        <h2 class="section-title">
+            Desde el...
+        </h2>
 
-            <p>
-                Y aunque no siempre encuentre las palabras correctas,
-                quiero que sepas algo muy sencillo:
-                <strong>te quiero muchísimo.</strong>
-            </p>
-
-            <p>
-                Esta página es pequeña, pero representa algo enorme:
-                las ganas que tengo de hacerte sonreír.
-            </p>
-
-            <div class="signature">
-                Con amor,<br>
-                Tu novio ❤️
-            </div>
-
+        <div class="date">
+            12 de agosto 🖤
         </div>
 
-    </section>
 
-    <!-- CONTADOR -->
-    <section class="counter">
+        <!-- ✏️ EDITA AQUÍ -->
 
-        <h2>Desde que llegaste a mi vida ⏳❤️</h2>
+        <p class="beginning-text">
 
-        <p>
-            Cada segundo contigo cuenta.
+            Apenas estamos empezando nuestra historia,
+            pero quería guardar este día de alguna manera.
+
+            <br><br>
+
+            No tenemos cientos de recuerdos juntos todavía,
+            pero tenemos este comienzo.
+
+            Y eso ya me hace feliz.
+
         </p>
 
-        <div class="time">
+        <!-- FIN EDITA AQUÍ -->
+
+    </section>
+
+
+
+    <!-- =================================
+         3. CONTADOR
+    ================================== -->
+
+    <section class="counter">
+
+        <h2 class="section-title">
+            Y el tiempo sigue pasando...
+        </h2>
+
+        <p class="section-subtitle">
+            pero cada segundo contigo cuenta 🖤
+        </p>
+
+
+        <div class="counter-container">
 
             <div class="time-box">
-                <strong id="days">0</strong>
-                <span>Días</span>
+
+                <strong id="days">
+                    0
+                </strong>
+
+                <span>
+                    DÍAS
+                </span>
+
             </div>
 
-            <div class="time-box">
-                <strong id="hours">0</strong>
-                <span>Horas</span>
-            </div>
 
             <div class="time-box">
-                <strong id="minutes">0</strong>
-                <span>Minutos</span>
+
+                <strong id="hours">
+                    0
+                </strong>
+
+                <span>
+                    HORAS
+                </span>
+
             </div>
 
+
             <div class="time-box">
-                <strong id="seconds">0</strong>
-                <span>Segundos</span>
+
+                <strong id="minutes">
+                    0
+                </strong>
+
+                <span>
+                    MINUTOS
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <strong id="seconds">
+                    0
+                </strong>
+
+                <span>
+                    SEGUNDOS
+                </span>
+
             </div>
 
         </div>
 
     </section>
 
-    <!-- SORPRESA -->
-    <section class="surprise">
 
-        <h2>Tengo algo más que decirte...</h2>
 
-        <p>Pero primero tienes que tocar el botón 👀</p>
+    <!-- =================================
+         4. COSAS QUE ME ENCANTAN DE TI
+    ================================== -->
 
-        <button class="button" onclick="showSecret()">
-            Abrir sorpresa 💗
-        </button>
+    <section class="things">
 
-        <div id="secret">
+        <h2 class="section-title">
+            Cosas que me encantan de ti
+        </h2>
+
+        <p class="section-subtitle">
+            podría seguir escribiendo pero nos quedamos hasta mañana xd
+        </p>
+
+
+        <div class="things-grid">
+
+
+            <!-- COSA 1 -->
+
+            <div class="thing">
+
+                <h3>
+                    Tu forma de ser
+                </h3>
+
+                <!-- ✏️ EDITA AQUÍ -->
+
+                <p>
+                    Me encanta simplemente cómo eres.
+                    No sé explicarlo bien, pero hay algo
+                    en tu forma de ser que me encanta.
+                </p>
+
+                <!-- FIN EDITA AQUÍ -->
+
+            </div>
+
+
+
+            <!-- COSA 2 -->
+
+            <div class="thing">
+
+                <h3>
+                    Tus ojos
+                </h3>
+
+                <!-- ✏️ EDITA AQUÍ -->
+
+                <p>
+                    Tus ojos tienen algo que no sé qué es,
+                    pero podría quedarme mirándolos muchísimo tiempo.
+                </p>
+
+                <!-- FIN EDITA AQUÍ -->
+
+            </div>
+
+
+
+            <!-- COSA 3 -->
+
+            <div class="thing">
+
+                <h3>
+                    Tu pelo
+                </h3>
+
+                <!-- ✏️ EDITA AQUÍ -->
+
+                <p>
+                    No sé qué tiene el color natural de tu pelo
+                    pero ahhhhhh me encanta demasiado.
+                </p>
+
+                <!-- FIN EDITA AQUÍ -->
+
+            </div>
+
+
+
+            <!-- COSA 4 -->
+
+            <div class="thing">
+
+                <h3>
+                    Tu autismo 🖤
+                </h3>
+
+                <!-- ✏️ EDITA AQUÍ -->
+
+                <p>
+                    No eres autista obviamente JAJAJA,
+                    pero ya quedó como parte del lore
+                    de Emonuela y Emonuel.
+                </p>
+
+                <!-- FIN EDITA AQUÍ -->
+
+            </div>
+
+
+
+            <!-- COSA 5 -->
+
+            <div class="thing">
+
+                <h3>
+                    Tu gato webudo
+                </h3>
+
+                <!-- ✏️ EDITA AQUÍ -->
+
+                <p>
+                    Mención honorífica para ese gato
+                    y sus dos enormes razones para existir 💀
+                </p>
+
+                <!-- FIN EDITA AQUÍ -->
+
+            </div>
+
+
+
+            <!-- PUEDES AGREGAR MÁS COSAS AQUÍ -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         5. MI EMONUELA
+    ================================== -->
+
+    <section class="gallery-section">
+
+        <h2 class="section-title">
+            Mi Emonuela 🖤
+        </h2>
+
+        <p class="section-subtitle">
+            fotos lindas, fotos raras y probablemente alguna que me quieras reclamar xd
+        </p>
+
+
+        <div class="gallery">
+
+
+            <!-- 📸 FOTO 1 -->
+
+            <div class="photo">
+
+                <img src="fotos/emonuela1.jpg"
+                     alt="Emonuela">
+
+                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <p>
+                    mi niña 🖤
+                </p>
+
+            </div>
+
+
+
+            <!-- 📸 FOTO 2 -->
+
+            <div class="photo">
+
+                <img src="fotos/emonuela2.jpg"
+                     alt="Emonuela">
+
+                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <p>
+                    demasiado linda
+                </p>
+
+            </div>
+
+
+
+            <!-- 📸 FOTO 3 -->
+
+            <div class="photo">
+
+                <img src="fotos/emonuela3.jpg"
+                     alt="Emonuela">
+
+                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <p>
+                    esta foto me encanta
+                </p>
+
+            </div>
+
+
+
+            <!-- 📸 FOTO 4 -->
+
+            <div class="photo">
+
+                <img src="fotos/emonuela4.jpg"
+                     alt="Emonuela">
+
+                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <p>
+                    xd
+                </p>
+
+            </div>
+
+
+
+            <!-- 📸 FOTO 5 -->
+
+            <div class="photo">
+
+                <img src="fotos/emonuela5.jpg"
+                     alt="Emonuela">
+
+                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <p>
+                    🖤
+                </p>
+
+            </div>
+
+
+
+            <!-- 📸 FOTO 6: GATO -->
+
+            <div class="photo">
+
+                <img src="fotos/gato-webudo.jpg"
+                     alt="El gato webudo">
+
+                <!-- ✏️ TEXTO DE LA FOTO -->
+
+                <p>
+                    el verdadero protagonista 💀
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         6. NUESTRA MÚSICA
+    ================================== -->
+
+    <section class="music">
+
+        <h2 class="section-title">
+            Nuestra música 🎧
+        </h2>
+
+
+        <div class="music-card">
+
+            <div class="music-icon">
+                🎧
+            </div>
+
+
+            <!-- ✏️ EDITA AQUÍ -->
+
+            <h3>
+                AQUÍ VA NUESTRA CANCIÓN
+            </h3>
 
             <p>
-                Si pudiera elegir una y otra vez,
-                entre todas las personas del mundo,
-                probablemente volvería a elegirte a ti.
-                ❤️
-                <br><br>
-                Te amo muchísimo.
+                Todavía no sé cuál poner,
+                así que este espacio queda reservado
+                para la canción que terminemos eligiendo.
             </p>
+
+            <!-- FIN EDITA AQUÍ -->
+
+
+            <!--
+                🎵 CUANDO ELIJAS LA CANCIÓN:
+
+                Puedes poner aquí un reproductor de Spotify,
+                YouTube o simplemente un enlace.
+
+                Lo hacemos juntos cuando hayas elegido.
+            -->
 
         </div>
 
     </section>
 
+
+
+    <!-- =================================
+         7. CARTA
+    ================================== -->
+
+    <section class="letter">
+
+        <h2 class="section-title">
+            Una carta para ti 💌
+        </h2>
+
+
+        <div class="letter-card">
+
+
+            <!-- =================================
+                 ✏️✏️✏️ ESCRIBE TU CARTA AQUÍ
+            ================================== -->
+
+
+            <p>
+
+                Emonuela 🖤
+
+                <br><br>
+
+                <!-- ✏️ ESCRIBE AQUÍ -->
+
+                No sé qué decirte todavía,
+                así que esta parte la voy a escribir yo
+                cuando sepa exactamente qué quiero decirte.
+
+                <!-- FIN ✏️ -->
+
+            </p>
+
+
+            <p>
+
+                <!-- ✏️ SEGUNDO PÁRRAFO -->
+
+                Aquí puedes seguir escribiendo
+                todo lo que quieras decirle.
+
+                <!-- FIN -->
+
+            </p>
+
+
+            <p>
+
+                <!-- ✏️ TERCER PÁRRAFO -->
+
+                Y aquí puedes poner cualquier cosa
+                que salga de ti.
+
+                <!-- FIN -->
+
+            </p>
+
+
+            <div class="signature">
+
+                tu autista 🖤
+
+            </div>
+
+
+            <!-- =================================
+                 FIN DE LA CARTA
+            ================================== -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================
+         8. SORPRESA FINAL
+    ================================== -->
+
+    <section class="surprise">
+
+        <h2 class="section-title">
+            Espera...
+        </h2>
+
+        <p class="section-subtitle">
+            todavía falta una cosa.
+        </p>
+
+
+        <button
+            class="button"
+            onclick="showSecret()">
+
+            abrir 🖤
+
+        </button>
+
+
+        <div
+            class="secret"
+            id="secret">
+
+            <!-- ✏️ EDITA AQUÍ -->
+
+            <p>
+
+                Emonuela...
+
+                <br><br>
+
+                te quiero muchísimo.
+
+                <br><br>
+
+                Gracias por estar conmigo.
+
+                <br><br>
+
+                <strong>
+                    tu autista 🖤
+                </strong>
+
+            </p>
+
+            <!-- FIN EDITA AQUÍ -->
+
+        </div>
+
+    </section>
+
+
+
     <footer>
-        Hecho con ❤️ especialmente para ti.
+
+        hecho por tu autista 🖤
+
     </footer>
 
 
+
+    <!-- =================================
+         JAVASCRIPT
+    ================================== -->
+
     <script>
 
-        /*
-         * CAMBIA ESTA FECHA
-         *
-         * Pon aquí la fecha en la que comenzaron su relación.
-         *
-         * Formato:
-         * Año, mes - 1, día, hora, minuto
-         *
-         * Ejemplo:
-         * new Date(2026, 5, 20, 18, 30)
-         *
-         * Junio = 5
-         * Julio = 6
-         * Agosto = 7
-         */
 
-        const startDate = new Date(2026, 7, 1, 0, 0);
+        /* =========================
+           CONTADOR
+
+           12 DE AGOSTO DE 2026
+
+           IMPORTANTE:
+           Agosto = 7 en JavaScript
+        ========================= */
+
+
+        const startDate =
+            new Date(2026, 7, 12, 0, 0);
+
 
         function updateCounter() {
 
-            const now = new Date();
+            const now =
+                new Date();
 
-            const difference = now - startDate;
+            const difference =
+                now - startDate;
 
-            const secondsTotal = Math.floor(difference / 1000);
 
-            const days = Math.floor(secondsTotal / 86400);
+            const totalSeconds =
+                Math.floor(
+                    difference / 1000
+                );
 
-            const hours = Math.floor(
-                (secondsTotal % 86400) / 3600
-            );
 
-            const minutes = Math.floor(
-                (secondsTotal % 3600) / 60
-            );
+            const days =
+                Math.floor(
+                    totalSeconds / 86400
+                );
+
+
+            const hours =
+                Math.floor(
+                    (totalSeconds % 86400)
+                    / 3600
+                );
+
+
+            const minutes =
+                Math.floor(
+                    (totalSeconds % 3600)
+                    / 60
+                );
+
 
             const seconds =
-                secondsTotal % 60;
+                totalSeconds % 60;
 
-            document.getElementById("days").textContent = days;
-            document.getElementById("hours").textContent = hours;
-            document.getElementById("minutes").textContent = minutes;
-            document.getElementById("seconds").textContent = seconds;
+
+            document
+                .getElementById("days")
+                .textContent = days;
+
+
+            document
+                .getElementById("hours")
+                .textContent = hours;
+
+
+            document
+                .getElementById("minutes")
+                .textContent = minutes;
+
+
+            document
+                .getElementById("seconds")
+                .textContent = seconds;
+
         }
 
-        setInterval(updateCounter, 1000);
 
         updateCounter();
+
+
+        setInterval(
+            updateCounter,
+            1000
+        );
+
+
+
+        /* =========================
+           SORPRESA
+        ========================= */
 
 
         function showSecret() {
 
             const secret =
-                document.getElementById("secret");
+                document.getElementById(
+                    "secret"
+                );
 
-            secret.style.display = "block";
+
+            secret.style.display =
+                "block";
+
+
+            createHearts();
+
+        }
+
+
+
+        /* =========================
+           CORAZONES EXTRA
+        ========================= */
+
+
+        function createHearts() {
+
+            for (
+                let i = 0;
+                i < 25;
+                i++
+            ) {
+
+                const heart =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                heart.innerHTML =
+                    "🖤";
+
+
+                heart.style.position =
+                    "fixed";
+
+
+                heart.style.left =
+                    Math.random() * 100 + "%";
+
+
+                heart.style.top =
+                    Math.random() * 100 + "%";
+
+
+                heart.style.fontSize =
+                    (15 + Math.random() * 25)
+                    + "px";
+
+
+                heart.style.pointerEvents =
+                    "none";
+
+
+                heart.style.zIndex =
+                    "999";
+
+
+                document.body
+                    .appendChild(heart);
+
+
+                heart.animate(
+
+                    [
+                        {
+                            transform:
+                                "scale(0) rotate(0deg)",
+                            opacity: 0
+                        },
+
+                        {
+                            transform:
+                                "scale(1.4) rotate(180deg)",
+                            opacity: 1
+                        },
+
+                        {
+                            transform:
+                                "scale(0) rotate(360deg)",
+                            opacity: 0
+                        }
+                    ],
+
+                    {
+                        duration:
+                            2000 +
+                            Math.random() * 1500,
+
+                        easing:
+                            "ease-out"
+                    }
+
+                );
+
+
+                setTimeout(
+                    () => heart.remove(),
+                    3500
+                );
+
+            }
 
         }
 
     </script>
 
+
 </body>
+
 </html>
